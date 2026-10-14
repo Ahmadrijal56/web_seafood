@@ -157,7 +157,7 @@ export default async function HomePage() {
 
       {/* 2. Kategori */}
       <section className="container-page -mt-2 pb-4 pt-6 sm:pt-10">
-        <div className="no-scrollbar -mx-4 flex gap-3 overflow-x-auto px-4 sm:mx-0 sm:grid sm:grid-cols-3 sm:px-0 lg:grid-cols-6">
+        <div className="no-scrollbar -mx-4 -my-3 flex gap-3 overflow-x-auto px-4 py-3 sm:mx-0 sm:grid sm:grid-cols-3 sm:px-0 lg:grid-cols-6">
           {categories.map((c) => (
             <Link
               key={c.id}
