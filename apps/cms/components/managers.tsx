@@ -103,7 +103,7 @@ export function BannerManager({ items }: { items: Banner[] }) {
         const state = bannerState(b);
         return (
           <div className="flex items-center gap-3">
-            <Thumb src={b.image_url} className="h-14 w-24" />
+            <Thumb src={b.image_url} className="h-11 w-[4.5rem] sm:h-14 sm:w-24" />
             <div className="min-w-0">
               <p className="truncate font-bold text-navy">{b.title}</p>
               <div className="mt-1 flex flex-wrap items-center gap-1.5 text-xs text-slate-400">
@@ -184,7 +184,7 @@ export function VideoManager({ items }: { items: Video[] }) {
         const v = item as unknown as Video;
         return (
           <div className="flex items-center gap-3">
-            <Thumb src={videoThumbnail(v.platform, v.url, v.thumbnail_url)} className="h-14 w-24" />
+            <Thumb src={videoThumbnail(v.platform, v.url, v.thumbnail_url)} className="h-11 w-[4.5rem] sm:h-14 sm:w-24" />
             <div className="min-w-0">
               <p className="truncate font-bold text-navy">{v.title ?? v.url}</p>
               <p className="truncate text-xs capitalize text-slate-400">{v.platform}</p>

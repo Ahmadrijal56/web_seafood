@@ -134,7 +134,7 @@ export function PriceBoard({
 
   return (
     <div className="pb-24">
-      <div className="mb-5 grid gap-4 lg:grid-cols-2">
+      <div className="mb-5 grid grid-cols-1 gap-4 lg:grid-cols-2">
         <Card>
           <Toggle
             checked={showPrices}
@@ -188,12 +188,12 @@ export function PriceBoard({
                           <p className="mb-1 text-[11px] font-bold text-slate-400">Harga coret</p>
                           <RupiahInput value={r.compare} onChange={(v) => update(p.id, { compare: v })} placeholder="—" />
                         </div>
-                        <div className="col-span-2 flex items-end justify-between gap-3 sm:col-span-1 sm:flex-col sm:items-start">
-                          <label className="flex items-center gap-2 text-[11px] font-bold text-slate-500">
+                        <div className="col-span-2 flex flex-wrap items-center justify-between gap-x-3 gap-y-2 sm:col-span-1 sm:flex-col sm:flex-nowrap sm:items-start">
+                          <label className="flex items-center gap-2 whitespace-nowrap text-[11px] font-bold text-slate-500">
                             <Toggle checked={r.show_price} onChange={(v) => update(p.id, { show_price: v })} />
                             {r.show_price ? "Tampilkan" : "Tanya harga"}
                           </label>
-                          <div className="flex overflow-hidden rounded-lg border border-slate-200 text-[11px] font-bold">
+                          <div className="flex shrink-0 overflow-hidden rounded-lg border border-slate-200 text-[11px] font-bold">
                             {(Object.keys(STOCK_LABELS) as StockStatus[]).map((s) => (
                               <button
                                 key={s}

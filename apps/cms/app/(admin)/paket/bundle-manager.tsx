@@ -135,7 +135,7 @@ export function BundleManager({ bundles: initial, products }: { bundles: BundleW
       {bundles.length === 0 ? (
         <EmptyState icon={<Package className="size-7" />} title="Belum ada paket" text="Contoh: Paket Bakar Keluarga — kakap + udang + cumi." />
       ) : (
-        <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {bundles.map((b) => {
             const off = discountPercent(b.price, b.compare_price);
             return (
@@ -194,7 +194,7 @@ export function BundleManager({ bundles: initial, products }: { bundles: BundleW
               <p className="mb-1.5 text-xs font-bold text-slate-600">Foto paket</p>
               <ImageField value={draft.image_url} onChange={(v) => set("image_url", v)} folder="bundles" aspect="aspect-[16/10]" />
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <Field label="Nama paket *">
                 <input className="input" value={draft.name} onChange={(e) => set("name", e.target.value)} placeholder="Paket Bakar Keluarga" />
               </Field>
@@ -244,7 +244,7 @@ export function BundleManager({ bundles: initial, products }: { bundles: BundleW
               </ul>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <Field label="Harga paket *">
                 <RupiahInput value={draft.price} onChange={(v) => set("price", v)} />
               </Field>

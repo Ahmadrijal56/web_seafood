@@ -53,7 +53,7 @@ export function AccountPanel({ admins, currentUserId }: { admins: AdminRow[]; cu
   }
 
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
+    <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
       <Card title="Daftar admin" className="lg:col-span-2">
         <ul className="divide-y divide-slate-100">
           {admins.map((a) => (
@@ -62,8 +62,8 @@ export function AccountPanel({ admins, currentUserId }: { admins: AdminRow[]; cu
                 {(a.name ?? a.email).charAt(0)}
               </span>
               <div className="min-w-0 flex-1">
-                <p className="flex items-center gap-2 truncate text-sm font-bold text-navy">
-                  {a.name ?? a.email.split("@")[0]}
+                <p className="flex items-center gap-2 text-sm font-bold text-navy">
+                  <span className="truncate">{a.name ?? a.email.split("@")[0]}</span>
                   {a.user_id === currentUserId && <Pill tone="brand">Anda</Pill>}
                 </p>
                 <p className="truncate text-xs text-slate-400">

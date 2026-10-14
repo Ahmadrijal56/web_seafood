@@ -218,14 +218,14 @@ export function ProductForm({ product, categories }: { product: ProductWithRelat
 
   return (
     <div className="pb-24">
-      <div className="grid gap-6 lg:grid-cols-3">
-        <div className="min-w-0 space-y-6 lg:col-span-2">
+      <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
+        <div className="min-w-0 space-y-6 xl:col-span-2">
           <Card title="Foto produk">
             <GalleryField images={form.images} onChange={(v) => set("images", v)} folder="products" />
           </Card>
 
           <Card title="Informasi produk">
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <Field label="Nama produk *" error={errors.name} className="sm:col-span-2">
                 <input
                   className="input"
@@ -292,7 +292,7 @@ export function ProductForm({ product, categories }: { product: ProductWithRelat
                   description={form.show_price ? "Harga & estimasi total tampil ke pembeli." : "Produk tampil dengan tombol \"Tanya Harga\" — cocok untuk harga lelang yang naik-turun."}
                 />
               </div>
-              <div className="grid gap-4 sm:grid-cols-3">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                 <Field label="Harga per kg" error={errors.price_per_kg}>
                   <RupiahInput value={form.price_per_kg} onChange={(v) => set("price_per_kg", v)} />
                 </Field>

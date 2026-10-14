@@ -196,7 +196,7 @@ export function CollectionManager({ table, items: initial, fields, defaults, nou
         }
       >
         {editing && (
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {fields.map((f) => (
               <FieldInput key={f.key} def={f} value={editing[f.key]} values={editing} error={errors[f.key]} onChange={(v) => set(f.key, v)} folder={folder} />
             ))}

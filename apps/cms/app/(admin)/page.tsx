@@ -78,7 +78,7 @@ export default async function DashboardPage() {
         })}
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-5">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-5">
         <Card
           title="Pesanan terbaru"
           className="lg:col-span-3"
@@ -104,7 +104,7 @@ export default async function DashboardPage() {
                         {o.order_code} · {formatDateTime(o.created_at)}
                       </p>
                     </div>
-                    <p className="text-sm font-bold text-slate-700">{formatRupiah(o.total)}</p>
+                    <p className="shrink-0 whitespace-nowrap text-sm font-bold text-slate-700">{formatRupiah(o.total)}</p>
                   </Link>
                 </li>
               ))}

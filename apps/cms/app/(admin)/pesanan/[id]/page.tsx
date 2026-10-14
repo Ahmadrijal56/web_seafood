@@ -29,7 +29,7 @@ export default async function OrderDetailPage({ params }: PageProps<"/pesanan/[i
         actions={<Pill tone={STATUS_TONES[order.status]} className="px-3 py-1 text-xs">{ORDER_STATUS_LABELS[order.status]}</Pill>}
       />
 
-      <div className="grid gap-6 lg:grid-cols-5">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-5">
         <div className="min-w-0 space-y-6 lg:col-span-3">
           <Card title={`Item pesanan (${order.order_items.length})`}>
             <ul className="divide-y divide-slate-100">
@@ -69,7 +69,7 @@ export default async function OrderDetailPage({ params }: PageProps<"/pesanan/[i
           </Card>
 
           <Card title="Pelanggan & pengiriman">
-            <dl className="grid gap-4 text-sm sm:grid-cols-2">
+            <dl className="grid grid-cols-1 gap-4 text-sm sm:grid-cols-2">
               <Info icon={<Phone className="size-4" />} label="Nama / WhatsApp" value={`${order.customer_name} · ${order.customer_phone}`} />
               <Info
                 icon={order.method === "delivery" ? <MapPin className="size-4" /> : <Store className="size-4" />}
