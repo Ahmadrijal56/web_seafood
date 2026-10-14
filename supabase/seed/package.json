@@ -1,0 +1,21 @@
+{
+  "name": "@sfs/seed",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "assets": "tsx process-assets.ts",
+    "seed": "tsx seed.ts"
+  },
+  "dependencies": {
+    "@sfs/shared": "workspace:*",
+    "@supabase/supabase-js": "^2.117.3",
+    "dotenv": "^17.2.3",
+    "sharp": "^0.35.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "~5.9.3"
+  }
+}
