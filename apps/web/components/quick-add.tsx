@@ -45,33 +45,39 @@ export function QuickAdd({ product, disabled }: { product: ProductSummary; disab
   const wa = waLink(settings.whatsapp, buildProductInquiry({ name: product.name, size_label: product.sizeLabel }, defaultQty(product.minOrderKg)));
 
   return (
-    <div className="flex gap-2">
-      <button
-        type="button"
-        disabled={disabled}
-        onClick={() => {
-          addProduct(product);
-          setAdded(true);
-          setTimeout(() => setAdded(false), 1500);
-        }}
-        className={cn(
-          "inline-flex h-10 flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-full text-sm font-semibold text-white transition active:scale-95 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:shadow-none",
-          added ? "bg-emerald-500" : "bg-coral shadow-md shadow-coral/25 hover:bg-coral-600",
-        )}
-      >
-        {added ? <Check className="size-4" strokeWidth={3} /> : <Plus className="size-4" strokeWidth={3} />}
-        <span>{added ? "Masuk" : "Keranjang"}</span>
-      </button>
-      <a
-        href={wa}
-        target="_blank"
-        rel="noopener"
-        onClick={() => track("wa_click", product.id, { from: "card" })}
-        className="grid size-10 shrink-0 place-items-center rounded-full bg-wa/10 text-wa-600 transition hover:bg-wa hover:text-white"
-        aria-label={`Tanya ${product.name} via WhatsApp`}
-      >
-        <WhatsAppIcon size={18} />
-      </a>
+    <div className="@container">
+      <div className="flex gap-1.5 @min-[10rem]:gap-2">
+        <button
+          type="button"
+          disabled={disabled}
+          onClick={() => {
+            addProduct(product);
+            setAdded(true);
+            setTimeout(() => setAdded(false), 1500);
+          }}
+          className={cn(
+            "inline-flex h-9 min-w-0 flex-1 cursor-pointer items-center justify-center gap-1 rounded-full px-2 text-[13px] font-semibold text-white transition active:scale-95 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:shadow-none @min-[10rem]:h-10 @min-[10rem]:gap-1.5 @min-[10rem]:px-3 @min-[10rem]:text-sm",
+            added ? "bg-emerald-500" : "bg-coral shadow-md shadow-coral/25 hover:bg-coral-600",
+          )}
+        >
+          {added ? (
+            <Check className="hidden size-3.5 shrink-0 @min-[8.5rem]:block @min-[10rem]:size-4" strokeWidth={3} />
+          ) : (
+            <Plus className="hidden size-3.5 shrink-0 @min-[8.5rem]:block @min-[10rem]:size-4" strokeWidth={3} />
+          )}
+          <span className="truncate">{added ? "Masuk" : "Keranjang"}</span>
+        </button>
+        <a
+          href={wa}
+          target="_blank"
+          rel="noopener"
+          onClick={() => track("wa_click", product.id, { from: "card" })}
+          className="grid size-9 shrink-0 place-items-center rounded-full bg-wa/10 text-wa-600 transition hover:bg-wa hover:text-white @min-[10rem]:size-10"
+          aria-label={`Tanya ${product.name} via WhatsApp`}
+        >
+          <WhatsAppIcon size={17} />
+        </a>
+      </div>
     </div>
   );
 }

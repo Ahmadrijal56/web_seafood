@@ -47,7 +47,7 @@ export function TestimonialCard({ t, className }: { t: Testimonial; className?: 
 
 export function TestimonialStrip({ items }: { items: Testimonial[] }) {
   return (
-    <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 sm:-mx-6 sm:px-6 lg:mx-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:px-0">
+    <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-4 sm:-mx-6 sm:scroll-px-6 sm:px-6 lg:mx-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:px-0">
       {items.map((t) => (
         <TestimonialCard key={t.id} t={t} className="w-[85%] shrink-0 snap-center sm:w-[45%] lg:w-auto" />
       ))}

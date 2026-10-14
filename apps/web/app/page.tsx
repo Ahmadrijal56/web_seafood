@@ -221,7 +221,7 @@ export default async function HomePage() {
           />
         </div>
         <div className="container-page">
-          <div className="no-scrollbar -mx-4 flex snap-x gap-4 overflow-x-auto px-4 pb-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+          <div className="no-scrollbar -mx-4 flex snap-x scroll-px-4 gap-4 overflow-x-auto px-4 pb-4 sm:-mx-6 sm:scroll-px-6 sm:px-6 lg:-mx-8 lg:scroll-px-8 lg:px-8">
             {todays.map((p, i) => (
               <ProductCard key={p.id} product={p} showPrices={settings.show_prices} priority={i < 2} className="w-[46%] shrink-0 snap-start sm:w-[31%] lg:w-[23%] xl:w-[19%]" />
             ))}
