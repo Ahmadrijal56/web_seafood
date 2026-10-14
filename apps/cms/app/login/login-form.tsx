@@ -8,8 +8,8 @@ import { supabaseBrowser } from "@/lib/supabase/client";
 
 export function LoginForm({ next }: { next: string }) {
   const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("admin@syauqifreshseafood.com");
+  const [password, setPassword] = useState("syauqi2026");
   const [show, setShow] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
