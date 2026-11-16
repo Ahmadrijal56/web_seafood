@@ -182,7 +182,7 @@ export function CartDrawer() {
                 <span className="text-xl font-extrabold text-navy">{formatRupiah(summary.subtotal)}</span>
               </div>
               {summary.unpriced > 0 && (
-                <p className="text-xs text-slate-500">+ {summary.unpriced} item harga dikonfirmasi admin via WhatsApp</p>
+                <p className="text-xs text-slate-500">+ {summary.unpriced} item harga dikonfirmasi penjual via WhatsApp</p>
               )}
               <Link href="/keranjang" className={buttonClass("wa", "lg", "w-full")} onClick={() => setOpen(false)}>
                 <WhatsAppIcon size={20} /> Lanjut Pesan via WhatsApp

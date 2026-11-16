@@ -67,7 +67,7 @@ export function ProductPurchase({
           ))}
           <QtyStepper value={qty} min={min} step={0.5} unit="kg" onChange={(v) => setQty(roundQty(v))} />
         </div>
-        <p className="mt-2 text-xs text-slate-500">Minimal order {formatKg(min)}. Untuk pesanan &gt; 50 kg silakan chat admin.</p>
+        <p className="mt-2 text-xs text-slate-500">Minimal order {formatKg(min)}. Untuk pesanan &gt; 50 kg silakan chat penjual.</p>
       </div>
 
       {processing.length > 0 && (
@@ -118,7 +118,7 @@ export function ProductPurchase({
             {total != null ? (
               <p className="text-2xl font-extrabold text-navy">{formatRupiah(total)}</p>
             ) : (
-              <p className="text-lg font-extrabold text-brand-700">Harga dikonfirmasi admin</p>
+              <p className="text-lg font-extrabold text-brand-700">Harga dikonfirmasi penjual</p>
             )}
           </div>
           {unit != null && (
@@ -130,7 +130,7 @@ export function ProductPurchase({
         </div>
         {!priced && (
           <p className="mt-2 flex items-start gap-1.5 text-xs text-slate-600">
-            <Info className="mt-0.5 size-3.5 shrink-0" /> Tetap bisa dimasukkan ke keranjang. Admin akan mengirim harga terbaru via WhatsApp.
+            <Info className="mt-0.5 size-3.5 shrink-0" /> Tetap bisa dimasukkan ke keranjang. Penjual akan mengirim harga terbaru via WhatsApp.
           </p>
         )}
         <div className="mt-4 grid gap-2 sm:grid-cols-2">

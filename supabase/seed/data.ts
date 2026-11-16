@@ -536,12 +536,12 @@ export const testimonials = [
 
 export const faqs = [
   { q: "Apakah seafood dijamin segar?", a: "Ya. Semua produk kami ambil dari lelang TPI Muara Angke setiap pagi, disortir, lalu dikemas dengan es curah di dalam styrofoam. Jika produk tidak segar saat diterima, kami ganti baru atau uang kembali." },
-  { q: "Bagaimana cara memesan?", a: "Pilih produk, tentukan berat & olahan, lalu klik \"Pesan via WhatsApp\". Pesanan otomatis tersusun rapi di WhatsApp admin kami untuk dikonfirmasi beserta ongkirnya." },
-  { q: "Kenapa ada produk yang tertulis \"Tanya Harga\"?", a: "Beberapa produk premium (lobster, kerapu, udang jumbo) harganya mengikuti hasil lelang harian. Anda tetap bisa memasukkannya ke keranjang, admin akan mengonfirmasi harga terbaru di WhatsApp." },
+  { q: "Bagaimana cara memesan?", a: "Pilih produk, tentukan berat & olahan, lalu klik \"Pesan via WhatsApp\". Pesanan otomatis tersusun rapi di WhatsApp penjual kami untuk dikonfirmasi beserta ongkirnya." },
+  { q: "Kenapa ada produk yang tertulis \"Tanya Harga\"?", a: "Beberapa produk premium (lobster, kerapu, udang jumbo) harganya mengikuti hasil lelang harian. Anda tetap bisa memasukkannya ke keranjang, penjual akan mengonfirmasi harga terbaru di WhatsApp." },
   { q: "Berapa minimal order?", a: "Minimal 0,5 kg per produk (beberapa produk minimal 1 kg). Tidak ada minimal total belanja untuk pengiriman Jakarta." },
   { q: "Apakah bisa dibersihkan atau di-fillet?", a: "Bisa. Pilih olahan saat memesan: dibersihkan, fillet, potong steak, kupas udang, potong ring cumi, dll. Beberapa olahan dikenakan biaya tambahan yang tertera." },
   { q: "Kapan pesanan dikirim?", a: "Pesanan yang masuk sebelum jam 12.00 WIB dikirim di hari yang sama untuk area Jakarta. Bodetabek H+0 atau H+1 tergantung jadwal kurir." },
-  { q: "Pembayaran bisa lewat apa?", a: "Transfer bank, QRIS, atau COD (khusus area tertentu). Detail pembayaran dikirim admin setelah pesanan dikonfirmasi di WhatsApp." },
+  { q: "Pembayaran bisa lewat apa?", a: "Transfer bank, QRIS, atau COD (khusus area tertentu). Detail pembayaran dikirim penjual setelah pesanan dikonfirmasi di WhatsApp." },
   { q: "Apakah melayani supply restoran & ekspor?", a: "Ya, kami melayani supply rutin untuk restoran, hotel, katering, hingga kebutuhan ekspor dengan harga khusus. Isi form di halaman Resto & Ekspor untuk minta penawaran." },
 ];
 
@@ -628,7 +628,7 @@ Faktor yang memengaruhi harga
 • Jenis & ukuran — udang jumbo atau kerapu premium harganya lebih fluktuatif.
 • Permintaan pasar — menjelang hari raya harga biasanya naik.
 
-Karena itu beberapa produk di toko kami bertanda "Tanya Harga". Anda tetap bisa order; admin akan konfirmasi harga lelang terbaru di WhatsApp.
+Karena itu beberapa produk di toko kami bertanda "Tanya Harga". Anda tetap bisa order; penjual akan konfirmasi harga lelang terbaru di WhatsApp.
 
 Untuk produk yang harganya lebih stabil (udang vaname ukuran standar, tongkol, kerang hijau), kami tampilkan harga per kg langsung di website.`,
     category: "berita" as const,

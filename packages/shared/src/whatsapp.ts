@@ -59,7 +59,7 @@ export function buildOrderMessage(input: OrderMessageInput): string {
     }
     lines.push(total);
   } else {
-    lines.push("Total: mohon dikonfirmasi admin");
+    lines.push("Total: mohon dikonfirmasi penjual");
   }
 
   lines.push("");

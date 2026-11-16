@@ -184,7 +184,7 @@ export function Catalog({
         <div className="flex flex-col items-center gap-3 rounded-3xl bg-ice px-6 py-16 text-center">
           <SearchX className="size-10 text-brand-400" />
           <p className="font-bold text-navy">Produk tidak ditemukan</p>
-          <p className="max-w-sm text-sm text-slate-600">Coba kata kunci lain, atau tanyakan langsung ke admin — stok lapak sering berubah setiap hari.</p>
+          <p className="max-w-sm text-sm text-slate-600">Coba kata kunci lain, atau tanyakan langsung ke penjual — stok lapak sering berubah setiap hari.</p>
         </div>
       )}
     </div>

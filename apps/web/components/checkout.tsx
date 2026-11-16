@@ -270,7 +270,7 @@ export function Checkout({ areas }: { areas: ShippingArea[] }) {
           </dl>
           {summary.unpriced > 0 && (
             <p className="mt-3 rounded-xl bg-brand-50 p-3 text-xs text-brand-800">
-              Beberapa produk mengikuti harga lelang hari ini. Admin akan mengonfirmasi total akhir di WhatsApp.
+              Beberapa produk mengikuti harga lelang hari ini. Penjual akan mengonfirmasi total akhir di WhatsApp.
             </p>
           )}
           {serverError && (
@@ -283,7 +283,7 @@ export function Checkout({ areas }: { areas: ShippingArea[] }) {
             {submitting ? "Menyiapkan pesanan…" : "Kirim Pesanan via WhatsApp"}
           </button>
           <p className="mt-3 text-center text-xs text-slate-500">
-            Pesanan akan tersusun otomatis di WhatsApp. Pembayaran dilakukan setelah admin mengonfirmasi.
+            Pesanan akan tersusun otomatis di WhatsApp. Pembayaran dilakukan setelah penjual mengonfirmasi.
           </p>
         </div>
       </aside>

@@ -75,7 +75,7 @@ export default async function FaqPage() {
             </p>
             <OpenStatus hours={settings.hours} className="mt-3" />
             <a href={waLink(settings.whatsapp)} target="_blank" rel="noopener" className={buttonClass("wa", "md", "mt-5 w-full")}>
-              <WhatsAppIcon size={18} /> Tanya admin
+              <WhatsAppIcon size={18} /> Tanya penjual
             </a>
           </div>
         </div>

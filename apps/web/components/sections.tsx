@@ -192,7 +192,7 @@ export function ClosingCta({ settings }: { settings: StoreSettings }) {
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <a href="/produk" className={buttonClass("coral", "lg")}>Belanja Sekarang</a>
           <a href={waLink(settings.whatsapp, "Halo Syauqi Fresh Seafood, saya mau pesan seafood hari ini 🙏")} target="_blank" rel="noopener" className={buttonClass("wa", "lg")}>
-            <WhatsAppIcon size={20} /> Chat WhatsApp
+            <WhatsAppIcon size={20} /> Chat Penjual
           </a>
         </div>
       </div>

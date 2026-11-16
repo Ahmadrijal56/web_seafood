@@ -94,8 +94,8 @@ export function Header() {
               className="hidden h-10 items-center gap-2 rounded-full bg-wa px-3.5 text-sm font-semibold text-white transition hover:bg-wa-600 md:inline-flex xl:px-4"
             >
               <WhatsAppIcon size={16} />
-              <span className="hidden xl:inline">Chat Admin</span>
-              <span className="xl:hidden">Chat</span>
+              <span className="hidden xl:inline">Chat Penjual</span>
+              <span className="xl:hidden">Penjual</span>
             </a>
             <button
               type="button"

@@ -368,7 +368,7 @@ export default async function HomePage() {
                 <>
                   Belum terjawab?{" "}
                   <a href={waLink(settings.whatsapp)} target="_blank" rel="noopener" className="font-bold text-wa-600 underline">
-                    Chat admin kami
+                    Chat penjual kami
                   </a>{" "}
                   atau lihat <Link href="/faq" className="font-bold text-brand-600 underline">FAQ lengkap &amp; info ongkir</Link>.
                 </>

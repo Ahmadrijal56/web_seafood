@@ -61,7 +61,7 @@ export function OrderSent() {
         <CheckCircle2 className="mx-auto size-16 text-emerald-500" />
         <h1 className="mt-4 text-2xl font-extrabold text-navy sm:text-3xl">Pesanan tercatat!</h1>
         <p className="mt-2 text-slate-600">
-          Nomor pesanan <b className="text-navy">{order.order_code}</b>. Langkah terakhir: kirim pesan di WhatsApp agar admin segera memproses.
+          Nomor pesanan <b className="text-navy">{order.order_code}</b>. Langkah terakhir: kirim pesan di WhatsApp agar penjual segera memproses.
         </p>
         <a
           href={data.waUrl}

@@ -32,7 +32,7 @@ export function FloatingBars() {
           showBar ? "bottom-24" : "bottom-5",
           onCheckout && "hidden",
         )}
-        aria-label="Chat WhatsApp"
+        aria-label="Chat Penjual"
       >
         <span className="absolute inset-0 animate-ping rounded-full bg-wa opacity-20" />
         <WhatsAppIcon size={28} />
