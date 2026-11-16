@@ -12,6 +12,7 @@ import {
   Megaphone,
   Menu,
   MessageSquareQuote,
+  Newspaper,
   Package,
   Settings,
   Tags,
@@ -50,6 +51,7 @@ const GROUPS: { title: string; items: NavItem[] }[] = [
     title: "Konten",
     items: [
       { href: "/banner", label: "Banner & Promo", icon: Megaphone },
+      { href: "/artikel", label: "Artikel & Berita", icon: Newspaper },
       { href: "/testimoni", label: "Testimoni", icon: MessageSquareQuote },
       { href: "/video", label: "Video", icon: Clapperboard },
       { href: "/faq", label: "FAQ", icon: CircleHelp },

@@ -1,10 +1,16 @@
-import type { Badge, OrderStatus, ProductType, StockStatus } from "./types";
+import type { ArticleCategory, Badge, OrderStatus, ProductType, StockStatus } from "./types";
 
 export const BADGE_LABELS: Record<Badge, string> = {
   today_catch: "Tangkapan Hari Ini",
   best_seller: "Best Seller",
   promo: "Promo",
   limited: "Stok Terbatas",
+};
+
+export const ARTICLE_CATEGORY_LABELS: Record<ArticleCategory, string> = {
+  berita: "Berita",
+  resep: "Resep",
+  tips: "Tips",
 };
 
 export const STOCK_LABELS: Record<StockStatus, string> = {

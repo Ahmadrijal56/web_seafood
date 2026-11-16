@@ -4,6 +4,7 @@ export type Badge = "today_catch" | "best_seller" | "promo" | "limited";
 export type OptionKind = "weight" | "processing";
 export type OrderStatus = "new" | "confirmed" | "shipped" | "done" | "cancelled";
 export type DeliveryMethod = "delivery" | "pickup";
+export type ArticleCategory = "berita" | "resep" | "tips";
 
 export interface Category {
   id: string;
@@ -137,6 +138,25 @@ export interface Faq {
   answer: string;
   is_active: boolean;
   sort_order: number;
+}
+
+export interface Article {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string | null;
+  body: string;
+  cover_image_url: string | null;
+  category: ArticleCategory;
+  author_name: string | null;
+  published_at: string;
+  seo_title: string | null;
+  seo_description: string | null;
+  is_featured: boolean;
+  is_active: boolean;
+  sort_order: number;
+  created_at: string;
+  updated_at: string;
 }
 
 export interface ShippingArea {

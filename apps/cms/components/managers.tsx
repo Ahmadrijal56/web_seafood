@@ -1,9 +1,11 @@
 "use client";
 
 import {
+  ARTICLE_CATEGORY_LABELS,
   formatDateTime,
   formatRupiah,
   videoThumbnail,
+  type Article,
   type Banner,
   type Category,
   type Faq,
@@ -11,7 +13,7 @@ import {
   type Testimonial,
   type Video,
 } from "@sfs/shared";
-import { CircleHelp, Clapperboard, ImageIcon, LayoutGrid, Megaphone, MessageSquareQuote, Star, Truck } from "lucide-react";
+import { CircleHelp, Clapperboard, ImageIcon, LayoutGrid, Megaphone, MessageSquareQuote, Newspaper, Star, Truck } from "lucide-react";
 import { CollectionManager, type Row } from "./collection";
 import { Pill } from "./ui";
 
@@ -214,6 +216,64 @@ export function FaqManager({ items }: { items: Faq[] }) {
           <div>
             <p className="font-bold text-navy">{f.question}</p>
             <p className="mt-0.5 line-clamp-1 text-sm text-slate-500">{f.answer}</p>
+          </div>
+        );
+      }}
+    />
+  );
+}
+
+export function ArticleManager({ items }: { items: Article[] }) {
+  return (
+    <CollectionManager
+      table="articles"
+      noun="artikel"
+      folder="articles"
+      icon={<Newspaper className="size-7" />}
+      emptyText="Tulis berita, resep, atau tips — tampil di /artikel dan bisa diunggulkan di beranda."
+      items={asRows(items)}
+      defaults={{
+        category: "berita",
+        author_name: "Syauqi Fresh Seafood",
+        is_featured: false,
+        published_at: new Date().toISOString(),
+      }}
+      fields={[
+        { key: "cover_image_url", label: "Gambar cover", type: "image", aspect: "aspect-[16/9]", hint: "Rasio 16:9, foto jelas untuk kartu beranda & listing" },
+        { key: "title", label: "Judul", type: "text", required: true, full: true, placeholder: "Cara menyimpan seafood agar tetap segar" },
+        { key: "slug", label: "Slug", type: "slug", from: "title", hint: "URL: /artikel/slug-ini" },
+        {
+          key: "category",
+          label: "Kategori",
+          type: "select",
+          required: true,
+          options: [
+            { value: "berita", label: "Berita" },
+            { value: "resep", label: "Resep" },
+            { value: "tips", label: "Tips" },
+          ],
+        },
+        { key: "author_name", label: "Penulis", type: "text", placeholder: "Syauqi Fresh Seafood" },
+        { key: "published_at", label: "Tanggal terbit", type: "datetime", required: true },
+        { key: "excerpt", label: "Ringkasan", type: "textarea", placeholder: "1–2 kalimat untuk kartu listing & SEO", hint: "Muncul di daftar artikel dan meta description bila SEO kosong" },
+        { key: "body", label: "Isi artikel", type: "textarea", required: true, placeholder: "Tulis isi lengkap. Enter untuk baris baru." },
+        { key: "seo_title", label: "Judul SEO", type: "text", full: true, placeholder: "Kosongkan = pakai judul artikel" },
+        { key: "seo_description", label: "Deskripsi SEO", type: "textarea", placeholder: "Kosongkan = pakai ringkasan" },
+        { key: "is_featured", label: "Unggulan di beranda", type: "toggle", full: true, hint: "Artikel unggulan diprioritaskan di section beranda" },
+      ]}
+      renderItem={(item) => {
+        const a = item as unknown as Article;
+        return (
+          <div className="flex items-center gap-3">
+            <Thumb src={a.cover_image_url} className="h-11 w-[4.5rem] sm:h-14 sm:w-24" />
+            <div className="min-w-0">
+              <p className="truncate font-bold text-navy">{a.title}</p>
+              <div className="mt-1 flex flex-wrap items-center gap-1.5 text-xs text-slate-400">
+                <Pill tone="slate">{ARTICLE_CATEGORY_LABELS[a.category]}</Pill>
+                {a.is_featured && <Pill tone="amber">Unggulan</Pill>}
+                <span>{formatDateTime(a.published_at)}</span>
+              </div>
+            </div>
           </div>
         );
       }}

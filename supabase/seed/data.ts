@@ -562,3 +562,81 @@ export const videos = [
   { platform: "youtube", id: "SrzCO9_mkNw", title: "Lobster Bambu Hidup di Lapak TPI", thumb: "photos/SrzCO9_mkNw" },
   { platform: "youtube", id: "5ZjIUDYl51g", title: "Kepiting Bakau Segar Siap Kirim", thumb: "photos/5ZjIUDYl51g" },
 ];
+
+export const articles = [
+  {
+    slug: "cara-menyimpan-seafood-agar-tetap-segar",
+    title: "Cara Menyimpan Seafood Agar Tetap Segar di Rumah",
+    excerpt: "Panduan praktis menyimpan ikan, udang, dan kerang di kulkas atau freezer supaya tetap segar sampai dimasak.",
+    body: `Beli seafood segar memang enak, tapi kalau salah simpan rasanya cepat turun.
+
+Di kulkas (1–2 hari)
+• Bungkus rapat dengan plastik food grade atau wadah tertutup.
+• Letakkan di rak paling bawah, di atas wadah berisi es batu bila memungkinkan.
+• Jangan cuci dulu kalau belum mau dimasak — air mempercepat pembusukan.
+
+Di freezer (hingga 1 bulan)
+• Keringkan permukaan dengan tisu dapur, bungkus rapat, buang udara sebanyak mungkin.
+• Labeli tanggal. Cairkan pelan di kulkas semalaman, jangan di suhu ruang.
+
+Khusus kepiting hidup
+Simpan di bagian bawah kulkas (bukan freezer) dengan kain lembap, maksimal 1–2 hari.
+
+Kalau baru beli dari kami, seafood sudah dikemas styrofoam + es — segera pindahkan ke kulkas setelah diterima.`,
+    category: "tips" as const,
+    author: "Syauqi Fresh Seafood",
+    image: "photos/DebqliVoFCc",
+    featured: true,
+    seoTitle: "Cara Menyimpan Seafood Segar di Rumah | Syauqi Fresh",
+    seoDescription: "Tips menyimpan ikan, udang, kepiting, dan kerang di kulkas atau freezer agar tetap segar.",
+    daysAgo: 3,
+  },
+  {
+    slug: "resep-udang-saus-padang",
+    title: "Resep Udang Saus Padang praktis untuk keluarga",
+    excerpt: "Udang juicy dengan saus padang pedas manis — siap di meja makan dalam 20 menit.",
+    body: `Bahan (2–3 porsi)
+• 500 g udang vaname segar
+• 5 siung bawang merah, 3 bawang putih
+• 5 cabai merah keriting (sesuaikan selera)
+• 2 sdm saus tomat, 1 sdm sambal botolan
+• Garam, gula, dan sedikit air
+
+Cara membuat
+1. Tumis bawang dan cabai hingga harum.
+2. Masukkan saus tomat, sambal, garam, gula, dan sedikit air. Masak sampai mendidih.
+3. Masukkan udang. Aduk 3–4 menit sampai berubah warna — jangan terlalu lama agar tetap juicy.
+4. Sajikan hangat dengan nasi putih dan lalapan.
+
+Tips dari lapak: pilih udang yang kepala masih kuat menempel dan bau laut segar. Order Udang Vaname di toko kami, minta dibuang kepala atau dikupas biar langsung masak.`,
+    category: "resep" as const,
+    author: "Syauqi Fresh Seafood",
+    image: "photos/Deb-1d5zsVw",
+    featured: true,
+    seoTitle: "Resep Udang Saus Padang Praktis | Syauqi Fresh",
+    seoDescription: "Resep udang saus padang praktis 20 menit pakai udang vaname segar dari Muara Angke.",
+    daysAgo: 1,
+  },
+  {
+    slug: "kenapa-harga-seafood-berubah-setiap-hari",
+    title: "Kenapa harga seafood berubah setiap hari?",
+    excerpt: "Harga di lapak mengikuti hasil lelang TPI Muara Angke — ini penjelasan singkatnya.",
+    body: `Setiap subuh, kapal-kapal pendarat di TPI Muara Angke. Hasil tangkapan dilelang, dan harga terbentuk dari pasokan hari itu.
+
+Faktor yang memengaruhi harga
+• Cuaca & musim — ombak besar = tangkapan lebih sedikit.
+• Jenis & ukuran — udang jumbo atau kerapu premium harganya lebih fluktuatif.
+• Permintaan pasar — menjelang hari raya harga biasanya naik.
+
+Karena itu beberapa produk di toko kami bertanda "Tanya Harga". Anda tetap bisa order; admin akan konfirmasi harga lelang terbaru di WhatsApp.
+
+Untuk produk yang harganya lebih stabil (udang vaname ukuran standar, tongkol, kerang hijau), kami tampilkan harga per kg langsung di website.`,
+    category: "berita" as const,
+    author: "Syauqi Fresh Seafood",
+    image: "photos/5ZjIUDYl51g",
+    featured: true,
+    seoTitle: "Kenapa Harga Seafood Berubah Setiap Hari? | Syauqi Fresh",
+    seoDescription: "Penjelasan singkat harga seafood mengikuti lelang TPI Muara Angke setiap pagi.",
+    daysAgo: 0,
+  },
+];

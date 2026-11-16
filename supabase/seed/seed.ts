@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 import { createClient } from "@supabase/supabase-js";
 import { DEFAULT_SETTINGS, unitPriceFor } from "@sfs/shared";
 import { config } from "dotenv";
-import { banners, bundles, categories, faqs, products, shippingAreas, testimonials, videos } from "./data";
+import { articles, banners, bundles, categories, faqs, products, shippingAreas, testimonials, videos } from "./data";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 config({ path: path.join(here, ".env"), quiet: true });
@@ -62,6 +62,7 @@ async function wipe() {
     ["testimonials", (q) => q.not("id", "is", null)],
     ["videos", (q) => q.not("id", "is", null)],
     ["faqs", (q) => q.not("id", "is", null)],
+    ["articles", (q) => q.not("id", "is", null)],
     ["shipping_areas", (q) => q.not("id", "is", null)],
     ["settings", (q) => q.neq("key", "")],
   ];
@@ -217,6 +218,27 @@ async function main() {
 
   check(await db.from("testimonials").insert(testimonials.map((t, i) => ({ ...t, sort_order: i }))), "testimoni");
   check(await db.from("faqs").insert(faqs.map((f, i) => ({ question: f.q, answer: f.a, sort_order: i }))), "faq");
+  check(
+    await db.from("articles").insert(
+      await Promise.all(
+        articles.map(async (a, i) => ({
+          title: a.title,
+          slug: a.slug,
+          excerpt: a.excerpt,
+          body: a.body,
+          category: a.category,
+          author_name: a.author,
+          cover_image_url: await upload(a.image),
+          seo_title: a.seoTitle,
+          seo_description: a.seoDescription,
+          is_featured: a.featured,
+          published_at: hoursAgo(a.daysAgo * 24),
+          sort_order: i + 1,
+        })),
+      ),
+    ),
+    "artikel",
+  );
   check(
     await db.from("videos").insert(
       await Promise.all(

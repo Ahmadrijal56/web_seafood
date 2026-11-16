@@ -2,6 +2,7 @@ import "server-only";
 import { cache } from "react";
 import {
   mergeSettings,
+  type Article,
   type Banner,
   type BundleWithItems,
   type Category,
@@ -79,6 +80,30 @@ export const getFaqs = cache(async (): Promise<Faq[]> => {
   if (error) throw error;
   return data ?? [];
 });
+
+export const getArticles = cache(async (): Promise<Article[]> => {
+  const { data, error } = await db
+    .from("articles")
+    .select("*")
+    .eq("is_active", true)
+    .order("published_at", { ascending: false });
+  if (error) throw error;
+  return data ?? [];
+});
+
+export const getArticle = cache(async (slug: string): Promise<Article | null> => {
+  const { data, error } = await db.from("articles").select("*").eq("slug", slug).eq("is_active", true).maybeSingle();
+  if (error) throw error;
+  return data;
+});
+
+/** Artikel untuk section beranda: unggulan dulu, sisanya terbaru. */
+export function homeArticles(articles: Article[], limit = 3): Article[] {
+  const featured = articles.filter((a) => a.is_featured);
+  if (featured.length >= limit) return featured.slice(0, limit);
+  const rest = articles.filter((a) => !a.is_featured);
+  return [...featured, ...rest].slice(0, limit);
+}
 
 export const getShippingAreas = cache(async (): Promise<ShippingArea[]> => {
   const { data, error } = await db.from("shipping_areas").select("*").eq("is_active", true).order("sort_order");

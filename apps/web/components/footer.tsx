@@ -48,6 +48,7 @@ export function Footer({ settings }: { settings: StoreSettings }) {
           <h3 className="text-sm font-bold uppercase tracking-wider text-white">Info</h3>
           <ul className="mt-4 space-y-2.5 text-sm">
             <li><Link href="/tentang" className="hover:text-white">Tentang Kami</Link></li>
+            <li><Link href="/artikel" className="hover:text-white">Artikel &amp; Berita</Link></li>
             <li><Link href="/resto-ekspor" className="hover:text-white">Supply Resto &amp; Ekspor</Link></li>
             <li><Link href="/testimoni" className="hover:text-white">Testimoni &amp; Galeri</Link></li>
             <li><Link href="/faq" className="hover:text-white">FAQ &amp; Pengiriman</Link></li>

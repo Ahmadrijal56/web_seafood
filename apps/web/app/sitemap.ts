@@ -1,12 +1,12 @@
 import type { MetadataRoute } from "next";
-import { getProducts } from "@/lib/data";
+import { getArticles, getProducts } from "@/lib/data";
 import { SITE_URL } from "@/lib/utils";
 
 export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const products = await getProducts();
-  const pages = ["", "/produk", "/paket", "/resto-ekspor", "/tentang", "/testimoni", "/faq"].map((path) => ({
+  const [products, articles] = await Promise.all([getProducts(), getArticles()]);
+  const pages = ["", "/produk", "/paket", "/artikel", "/resto-ekspor", "/tentang", "/testimoni", "/faq"].map((path) => ({
     url: `${SITE_URL}${path}`,
     changeFrequency: "daily" as const,
     priority: path === "" ? 1 : 0.8,
@@ -18,6 +18,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: p.updated_at,
       changeFrequency: "daily" as const,
       priority: 0.7,
+    })),
+    ...articles.map((a) => ({
+      url: `${SITE_URL}/artikel/${a.slug}`,
+      lastModified: a.updated_at,
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
     })),
   ];
 }

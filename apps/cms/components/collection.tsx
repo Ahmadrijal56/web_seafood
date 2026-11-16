@@ -240,7 +240,14 @@ function FieldInput({
   let input: ReactNode;
   switch (def.type) {
     case "textarea":
-      input = <textarea className="input min-h-28" value={str} placeholder={def.placeholder} onChange={(e) => onChange(e.target.value)} />;
+      input = (
+        <textarea
+          className={cn("input min-h-28", def.key === "body" && "min-h-56")}
+          value={str}
+          placeholder={def.placeholder}
+          onChange={(e) => onChange(e.target.value)}
+        />
+      );
       break;
     case "rupiah":
       input = <RupiahInput value={str} placeholder={def.placeholder} onChange={(v) => onChange(v === "" ? null : v)} />;

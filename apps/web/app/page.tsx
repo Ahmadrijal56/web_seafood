@@ -2,6 +2,7 @@ import { formatDateLong, formatRupiah, todayJakarta, waLink } from "@sfs/shared"
 import { ArrowRight, BadgeCheck, CalendarDays, Hotel, Scale, ShieldCheck, Truck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { ArticleCard } from "@/components/article-card";
 import { BannerCarousel } from "@/components/banner-carousel";
 import { BundleCard } from "@/components/bundle-card";
 import { Bubbles, Wave } from "@/components/decor";
@@ -14,6 +15,7 @@ import { ButtonLink, SectionHeading, buttonClass } from "@/components/ui";
 import { VideoGrid } from "@/components/video-grid";
 import {
   activeBanners,
+  getArticles,
   getBanners,
   getBundles,
   getCategories,
@@ -22,6 +24,7 @@ import {
   getSettings,
   getTestimonials,
   getVideos,
+  homeArticles,
 } from "@/lib/data";
 import { toSummary } from "@/lib/product";
 import { SITE_URL } from "@/lib/utils";
@@ -29,7 +32,7 @@ import { SITE_URL } from "@/lib/utils";
 export const revalidate = 300;
 
 export default async function HomePage() {
-  const [settings, categories, products, bundles, banners, testimonials, videos, faqs] = await Promise.all([
+  const [settings, categories, products, bundles, banners, testimonials, videos, faqs, articles] = await Promise.all([
     getSettings(),
     getCategories(),
     getProducts(),
@@ -38,7 +41,9 @@ export default async function HomePage() {
     getTestimonials(),
     getVideos(),
     getFaqs(),
+    getArticles(),
   ]);
+  const latestArticles = homeArticles(articles, 3);
 
   const summaries = products.map(toSummary);
   const todays = summaries
@@ -289,9 +294,32 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* 9. Testimoni */}
-      {testimonials.length > 0 && (
+      {/* 9. Artikel */}
+      {latestArticles.length > 0 && (
         <section className="py-16 sm:py-24">
+          <div className="container-page">
+            <SectionHeading
+              eyebrow="Artikel & tips"
+              title="Resep, tips, dan kabar dari lapak"
+              description="Ide masak praktis dan panduan menjaga kesegaran seafood — langsung dari pengalaman kami di TPI."
+              action={
+                <Link href="/artikel" className="inline-flex items-center gap-1 text-sm font-bold text-brand-600 hover:text-brand-700">
+                  Semua artikel <ArrowRight className="size-4" />
+                </Link>
+              }
+            />
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {latestArticles.map((article, i) => (
+                <ArticleCard key={article.id} article={article} priority={i === 0} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 10. Testimoni */}
+      {testimonials.length > 0 && (
+        <section className="bg-ice py-16 sm:py-24">
           <div className="container-page">
             <SectionHeading
               eyebrow={`Rating ${settings.trust.rating}/5 dari ${settings.trust.customers} pelanggan`}
@@ -307,7 +335,7 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* 10. Banner B2B */}
+      {/* 11. Banner B2B */}
       <section className="container-page pb-16 sm:pb-24">
         <div className="relative grid overflow-hidden rounded-[2rem] bg-navy text-white lg:grid-cols-2">
           <div className="relative z-10 p-8 sm:p-12">
@@ -329,7 +357,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* 11. FAQ singkat */}
+      {/* 12. FAQ singkat */}
       {faqs.length > 0 && (
         <section className="bg-ice py-16 sm:py-24">
           <div className="container-page grid gap-10 lg:grid-cols-[1fr_1.4fr]">
