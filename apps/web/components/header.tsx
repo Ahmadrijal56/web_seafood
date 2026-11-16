@@ -16,7 +16,7 @@ export const NAV = [
   { href: "/produk", label: "Produk" },
   { href: "/paket", label: "Paket" },
   { href: "/artikel", label: "Artikel" },
-  { href: "/resto-ekspor", label: "Resto" },
+  { href: "/resto-ekspor", label: "Resto & Ekspor" },
   { href: "/tentang", label: "Tentang" },
   { href: "/testimoni", label: "Testimoni" },
   { href: "/faq", label: "FAQ" },
