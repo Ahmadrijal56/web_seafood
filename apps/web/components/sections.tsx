@@ -145,13 +145,15 @@ export function LocationSection({ settings }: { settings: StoreSettings }) {
                 <OpenStatus hours={settings.hours} className="mt-2" />
               </div>
             </li>
-            <li className="flex gap-4">
-              <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-brand-50 text-brand-600"><BadgeCheck className="size-5" /></span>
-              <div>
-                <p className="font-bold text-navy">Legalitas</p>
-                <p className="text-sm text-slate-600">{settings.legal.nib}</p>
-              </div>
-            </li>
+            {settings.legal.nib ? (
+              <li className="flex gap-4">
+                <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-brand-50 text-brand-600"><BadgeCheck className="size-5" /></span>
+                <div>
+                  <p className="font-bold text-navy">Legalitas</p>
+                  <p className="text-sm text-slate-600">{settings.legal.nib}</p>
+                </div>
+              </li>
+            ) : null}
           </ul>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href={settings.maps_url} target="_blank" rel="noopener" className={buttonClass("brand")}>

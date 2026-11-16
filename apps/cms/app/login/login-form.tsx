@@ -8,8 +8,8 @@ import { supabaseBrowser } from "@/lib/supabase/client";
 
 export function LoginForm({ next }: { next: string }) {
   const router = useRouter();
-  const [email, setEmail] = useState("admin@syauqifreshseafood.com");
-  const [password, setPassword] = useState("syauqi2026");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [show, setShow] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -33,7 +33,7 @@ export function LoginForm({ next }: { next: string }) {
   return (
     <form onSubmit={onSubmit} className="mt-5 space-y-4">
       <Field label="Email">
-        <input className="input" type="email" autoComplete="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="admin@syauqifreshseafood.com" />
+        <input className="input" type="email" autoComplete="username" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email admin" />
       </Field>
       <Field label="Password">
         <div className="relative">

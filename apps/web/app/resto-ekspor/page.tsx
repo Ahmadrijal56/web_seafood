@@ -36,7 +36,13 @@ export default async function B2BPage() {
     { icon: Ruler, title: "Spesifikasi sesuai dapur", text: "Size, potongan, fillet, porsi gram — kami siapkan sesuai SOP Anda." },
     { icon: Snowflake, title: "Rantai dingin terjaga", text: "Es curah, styrofoam, dan armada berpendingin untuk partai besar." },
     { icon: Warehouse, title: "Kapasitas besar", text: "Hingga ±2 ton per hari dari jaringan nelayan & pengepul TPI (data demo)." },
-    { icon: BadgeCheck, title: "Legalitas lengkap", text: `${settings.legal.nib}. Dokumen pendukung ekspor tersedia sesuai permintaan.` },
+    {
+      icon: BadgeCheck,
+      title: "Legalitas lengkap",
+      text: settings.legal.nib
+        ? `${settings.legal.nib}. Dokumen pendukung ekspor tersedia sesuai permintaan.`
+        : "Dokumen pendukung ekspor tersedia sesuai permintaan.",
+    },
   ];
   const segments = [
     { icon: UtensilsCrossed, label: "Restoran & seafood house" },

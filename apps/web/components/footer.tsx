@@ -74,7 +74,7 @@ export function Footer({ settings }: { settings: StoreSettings }) {
       </div>
       <div className="container-page mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-brand-100/60 sm:flex-row sm:justify-between">
         <p>© {new Date().getFullYear()} {settings.store_name}. Melayani sejak {settings.trust.since}.</p>
-        <p>{settings.legal.nib}</p>
+        {settings.legal.nib ? <p>{settings.legal.nib}</p> : null}
       </div>
     </footer>
   );

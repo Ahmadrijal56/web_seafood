@@ -40,7 +40,7 @@ export const DEFAULT_SETTINGS: StoreSettings = {
   show_prices: true,
   free_shipping_min: 300000,
   today_price_note: "Harga mengikuti hasil lelang TPI pagi ini",
-  legal: { nib: "NIB 91200xxxxxxx (contoh)", halal: "", other: "" },
+  legal: { nib: "", halal: "", other: "" },
   pixels: { ga4: "", meta: "", tiktok: "" },
   announcement: "🚚 Order sebelum jam 12.00 — dikirim hari ini se-Jabodetabek",
 };
